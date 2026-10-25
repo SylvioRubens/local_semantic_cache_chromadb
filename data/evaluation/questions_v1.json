@@ -1,0 +1,487 @@
+{
+  "dataset_id": "sql_server_questions_v1",
+  "version": 1,
+  "notes": "60 labeled questions, 15 answer classes; labels are for offline evaluation only, never agent input.",
+  "questions": [
+    {
+      "question_id": "q001",
+      "question": "Does READ COMMITTED allow dirty reads?",
+      "expected_answer_id": "read_committed_dirty",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q002",
+      "question": "Can a transaction see another session’s uncommitted updates under READ COMMITTED?",
+      "expected_answer_id": "read_committed_dirty",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q003",
+      "question": "Under READ COMMITTED, can I read data before another transaction commits?",
+      "expected_answer_id": "read_committed_dirty",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q004",
+      "question": "Does READ COMMITTED hide my own uncommitted UPDATE?",
+      "expected_answer_id": "read_committed_dirty",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q005",
+      "question": "Can READ UNCOMMITTED read uncommitted rows?",
+      "expected_answer_id": "read_uncommitted_dirty",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q006",
+      "question": "Does NOLOCK allow dirty reads in SQL Server?",
+      "expected_answer_id": "read_uncommitted_dirty",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q007",
+      "question": "Will READ UNCOMMITTED prevent dirty reads?",
+      "expected_answer_id": "read_uncommitted_dirty",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q008",
+      "question": "Is NOLOCK safe for consistent financial reporting?",
+      "expected_answer_id": "read_uncommitted_dirty",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q009",
+      "question": "Does RCSI use row versions for READ COMMITTED queries?",
+      "expected_answer_id": "rcsi_snapshot",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q010",
+      "question": "With READ_COMMITTED_SNAPSHOT ON, is each statement consistent?",
+      "expected_answer_id": "rcsi_snapshot",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q011",
+      "question": "Does RCSI give a transaction-wide snapshot?",
+      "expected_answer_id": "rcsi_snapshot",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q012",
+      "question": "Can RCSI reduce reader-writer blocking?",
+      "expected_answer_id": "rcsi_snapshot",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q013",
+      "question": "Does SNAPSHOT isolation keep the same view across a transaction?",
+      "expected_answer_id": "snapshot_tx",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q014",
+      "question": "Can SNAPSHOT isolation see commits made after its transaction began?",
+      "expected_answer_id": "snapshot_tx",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q015",
+      "question": "Is SNAPSHOT based on row versions?",
+      "expected_answer_id": "snapshot_tx",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q016",
+      "question": "Do concurrent writes ever conflict under SNAPSHOT isolation?",
+      "expected_answer_id": "snapshot_tx",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q017",
+      "question": "Does REPEATABLE READ prevent non-repeatable reads?",
+      "expected_answer_id": "repeatable_read",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q018",
+      "question": "Can phantom rows occur under REPEATABLE READ?",
+      "expected_answer_id": "repeatable_read",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q019",
+      "question": "Are previously read rows protected from concurrent changes in REPEATABLE READ?",
+      "expected_answer_id": "repeatable_read",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q020",
+      "question": "Is REPEATABLE READ equivalent to SERIALIZABLE for phantom prevention?",
+      "expected_answer_id": "repeatable_read",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q021",
+      "question": "Does SERIALIZABLE prevent phantom reads?",
+      "expected_answer_id": "serializable",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q022",
+      "question": "Which isolation level uses key-range locks to prevent phantoms?",
+      "expected_answer_id": "serializable",
+      "split": "calibration",
+      "category": "Isolation",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q023",
+      "question": "Is SERIALIZABLE stricter than REPEATABLE READ?",
+      "expected_answer_id": "serializable",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q024",
+      "question": "Can another transaction insert rows matching my predicate under SERIALIZABLE?",
+      "expected_answer_id": "serializable",
+      "split": "test",
+      "category": "Isolation",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q025",
+      "question": "What does blocking mean in SQL Server?",
+      "expected_answer_id": "blocking",
+      "split": "calibration",
+      "category": "Concurrency",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q026",
+      "question": "Why is my query waiting on a lock held by another session?",
+      "expected_answer_id": "blocking",
+      "split": "calibration",
+      "category": "Concurrency",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q027",
+      "question": "Is blocking always a deadlock?",
+      "expected_answer_id": "blocking",
+      "split": "test",
+      "category": "Concurrency",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q028",
+      "question": "Can COMMIT release a blocking lock?",
+      "expected_answer_id": "blocking",
+      "split": "test",
+      "category": "Concurrency",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q029",
+      "question": "What happens during a SQL Server deadlock?",
+      "expected_answer_id": "deadlock",
+      "split": "calibration",
+      "category": "Concurrency",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q030",
+      "question": "Does SQL Server automatically choose a deadlock victim?",
+      "expected_answer_id": "deadlock",
+      "split": "calibration",
+      "category": "Concurrency",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q031",
+      "question": "Is a circular lock dependency called blocking or deadlock?",
+      "expected_answer_id": "deadlock",
+      "split": "test",
+      "category": "Concurrency",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q032",
+      "question": "Can two sessions wait on each other indefinitely without a deadlock detector?",
+      "expected_answer_id": "deadlock",
+      "split": "test",
+      "category": "Concurrency",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q033",
+      "question": "How many clustered indexes can a table have?",
+      "expected_answer_id": "clustered_index",
+      "split": "calibration",
+      "category": "Indexes",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q034",
+      "question": "Does a clustered index define the row storage organization?",
+      "expected_answer_id": "clustered_index",
+      "split": "calibration",
+      "category": "Indexes",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q035",
+      "question": "Can SQL Server create two clustered indexes on one table?",
+      "expected_answer_id": "clustered_index",
+      "split": "test",
+      "category": "Indexes",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q036",
+      "question": "Are clustered index leaf pages the table data rows?",
+      "expected_answer_id": "clustered_index",
+      "split": "test",
+      "category": "Indexes",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q037",
+      "question": "Can a table have multiple nonclustered indexes?",
+      "expected_answer_id": "nonclustered_index",
+      "split": "calibration",
+      "category": "Indexes",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q038",
+      "question": "Do nonclustered indexes contain row locators?",
+      "expected_answer_id": "nonclustered_index",
+      "split": "calibration",
+      "category": "Indexes",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q039",
+      "question": "Are nonclustered index leaf entries always full table rows?",
+      "expected_answer_id": "nonclustered_index",
+      "split": "test",
+      "category": "Indexes",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q040",
+      "question": "What is an INCLUDE column in a nonclustered index?",
+      "expected_answer_id": "nonclustered_index",
+      "split": "test",
+      "category": "Indexes",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q041",
+      "question": "Can DELETE remove rows using a WHERE condition?",
+      "expected_answer_id": "delete_rows",
+      "split": "calibration",
+      "category": "DDL_DML",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q042",
+      "question": "Does DELETE reset IDENTITY automatically?",
+      "expected_answer_id": "delete_rows",
+      "split": "calibration",
+      "category": "DDL_DML",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q043",
+      "question": "Can a DELETE statement be rolled back?",
+      "expected_answer_id": "delete_rows",
+      "split": "test",
+      "category": "DDL_DML",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q044",
+      "question": "Does DELETE remove the table definition?",
+      "expected_answer_id": "delete_rows",
+      "split": "test",
+      "category": "DDL_DML",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q045",
+      "question": "Can TRUNCATE TABLE have a WHERE clause?",
+      "expected_answer_id": "truncate_table",
+      "split": "calibration",
+      "category": "DDL_DML",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q046",
+      "question": "Does TRUNCATE reset an identity seed?",
+      "expected_answer_id": "truncate_table",
+      "split": "calibration",
+      "category": "DDL_DML",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q047",
+      "question": "Can I roll back TRUNCATE in SQL Server?",
+      "expected_answer_id": "truncate_table",
+      "split": "test",
+      "category": "DDL_DML",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q048",
+      "question": "Does TRUNCATE remove the table schema?",
+      "expected_answer_id": "truncate_table",
+      "split": "test",
+      "category": "DDL_DML",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q049",
+      "question": "Does DROP TABLE delete the schema object?",
+      "expected_answer_id": "drop_table",
+      "split": "calibration",
+      "category": "DDL_DML",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q050",
+      "question": "What is removed by DROP TABLE?",
+      "expected_answer_id": "drop_table",
+      "split": "calibration",
+      "category": "DDL_DML",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q051",
+      "question": "Can DROP TABLE be rolled back in an explicit transaction?",
+      "expected_answer_id": "drop_table",
+      "split": "test",
+      "category": "DDL_DML",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q052",
+      "question": "Does DROP TABLE keep an empty table behind?",
+      "expected_answer_id": "drop_table",
+      "split": "test",
+      "category": "DDL_DML",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q053",
+      "question": "Where are #temp tables stored?",
+      "expected_answer_id": "temp_table",
+      "split": "calibration",
+      "category": "TemporaryObjects",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q054",
+      "question": "Can a local temporary table have indexes?",
+      "expected_answer_id": "temp_table",
+      "split": "calibration",
+      "category": "TemporaryObjects",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q055",
+      "question": "Is a #temp table visible to every session?",
+      "expected_answer_id": "temp_table",
+      "split": "test",
+      "category": "TemporaryObjects",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q056",
+      "question": "Does SQL Server maintain statistics on temporary tables?",
+      "expected_answer_id": "temp_table",
+      "split": "test",
+      "category": "TemporaryObjects",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q057",
+      "question": "How do I declare a table variable?",
+      "expected_answer_id": "table_variable",
+      "split": "calibration",
+      "category": "TemporaryObjects",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q058",
+      "question": "Is a table variable identical to a #temp table?",
+      "expected_answer_id": "table_variable",
+      "split": "calibration",
+      "category": "TemporaryObjects",
+      "challenge": "paraphrase"
+    },
+    {
+      "question_id": "q059",
+      "question": "Does a table variable last beyond its batch?",
+      "expected_answer_id": "table_variable",
+      "split": "test",
+      "category": "TemporaryObjects",
+      "challenge": "contrast"
+    },
+    {
+      "question_id": "q060",
+      "question": "How does optimization of table variables differ from temp tables?",
+      "expected_answer_id": "table_variable",
+      "split": "test",
+      "category": "TemporaryObjects",
+      "challenge": "contrast"
+    }
+  ]
+}

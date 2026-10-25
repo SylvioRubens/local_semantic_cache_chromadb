@@ -1,0 +1,127 @@
+{
+  "document_id": "sql_server_reference",
+  "version": 1,
+  "description": "Curated static SQL Server concepts for semantic response reuse; not live database advice.",
+  "answers": [
+    {
+      "answer_id": "read_committed_dirty",
+      "category": "Isolation",
+      "answer": "READ COMMITTED prevents dirty reads of other transactions, but a transaction can still read its own uncommitted changes. It does not guarantee repeatable reads.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "read_uncommitted_dirty",
+      "category": "Isolation",
+      "answer": "READ UNCOMMITTED permits dirty reads from other transactions; NOLOCK is broadly equivalent for data reads and can lead to inconsistent results.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "rcsi_snapshot",
+      "category": "Isolation",
+      "answer": "READ_COMMITTED_SNAPSHOT ON makes READ COMMITTED reads generally use statement-level row-versioned snapshots, avoiding many reader-writer blocking scenarios. It is not a transaction-wide snapshot.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "snapshot_tx",
+      "category": "Isolation",
+      "answer": "SNAPSHOT isolation provides a transaction-level consistent view of committed data as of the transaction snapshot, using row versions; concurrent update conflicts can still occur.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "repeatable_read",
+      "category": "Isolation",
+      "answer": "REPEATABLE READ prevents non-repeatable reads of rows already read by retaining appropriate locks, but phantom rows may still appear.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "serializable",
+      "category": "Isolation",
+      "answer": "SERIALIZABLE is SQL Server’s strictest standard isolation level; it prevents dirty reads, non-repeatable reads, and phantoms by protecting relevant key ranges with locks.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "blocking",
+      "category": "Concurrency",
+      "answer": "Blocking occurs when a session waits for resources locked by another session. It can resolve when the blocking transaction completes; it is not necessarily a deadlock.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "deadlock",
+      "category": "Concurrency",
+      "answer": "A deadlock is a circular wait in which sessions block each other. SQL Server detects deadlocks and selects a victim transaction to roll back.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "clustered_index",
+      "category": "Indexes",
+      "answer": "A clustered index determines the logical ordering of table rows by its clustered key; a table can have only one clustered index. Physical pages are not guaranteed to be perfectly sequential.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "nonclustered_index",
+      "category": "Indexes",
+      "answer": "A nonclustered index is a separate index structure whose leaf-level entries hold index keys and row locators or clustering keys, with optional included columns. A table can have multiple nonclustered indexes.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "delete_rows",
+      "category": "DDL_DML",
+      "answer": "DELETE removes selected rows (optionally using WHERE), logs row deletions, and can be rolled back inside a transaction. It usually does not reset an identity seed.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "truncate_table",
+      "category": "DDL_DML",
+      "answer": "TRUNCATE TABLE removes all rows by deallocating data pages, resets an identity counter in typical cases, does not support WHERE, and can be rolled back within an explicit SQL Server transaction.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "drop_table",
+      "category": "DDL_DML",
+      "answer": "DROP TABLE removes the table definition and its data. Unlike DELETE or TRUNCATE it removes the table object; it can be rolled back when performed within a suitable explicit transaction in SQL Server.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "temp_table",
+      "category": "TemporaryObjects",
+      "answer": "Local temporary tables use names prefixed with # and reside in tempdb. They support indexes and statistics and are scoped to the creating session and relevant nested scopes.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    },
+    {
+      "answer_id": "table_variable",
+      "category": "TemporaryObjects",
+      "answer": "A table variable is declared with DECLARE @name TABLE and is generally scoped to its batch or procedure. It differs from a #temp table in statistics and optimization behavior, which varies by SQL Server version and compatibility level.",
+      "version": 1,
+      "cache_scope": "public",
+      "source": "sql_server_reference_v1"
+    }
+  ]
+}
